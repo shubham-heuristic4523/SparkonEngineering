@@ -260,7 +260,12 @@ use App\Http\Controllers\VendorPoPartController;
 use App\Http\Controllers\VendorPoMaterialController;
 use App\Http\Controllers\SkuMasterController;
 
+//location Master by shubham 23/04/2026
+use App\Http\Controllers\LocationSet;
+use App\Http\Controllers\LocationStore;
 
+//Rack Master by shubham 23/04/2026
+use App\Http\Controllers\RackStore;
 
 Route::resource('Requisition_Entry', RequisitionEntryController::class);
 Route::resource('petrol-dip', PetrolDipController::class);
@@ -1680,3 +1685,12 @@ Route::get('/sku/delete/{id}', [SkuMasterController::class, 'destroy'])
     ->name('sku.delete');
 Route::get('/sku-edit/{id}', [SkuMasterController::class, 'edit'])->name('sku.edit');
 Route::put('/sku/update/{id}', [SkuMasterController::class, 'update'])->name('sku.update');
+
+//Location-Set Master by shubham 23/04/2026
+Route::resource('location-set', LocationSet::class);
+
+//Location-Set Master by shubham 23/04/2026
+Route::resource('location', LocationStore::class);
+
+//Rack Master by shubham 23/04/2026
+Route::resource('rack', RackStore::class);
